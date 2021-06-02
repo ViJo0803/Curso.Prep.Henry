@@ -5,16 +5,28 @@ h1
 img
 {
     width: 400px;
+
 }
+div{
+  width: 100px;
+  margin: 0 auto;
+}
+
 #thirdDiv
 {
   height: 600px;
   width: 500px;
   background:blue;
   padding: 50px;
-  border: 1px solid black;
+  border: 10px solid black;
+
 }
 #spanId{
     font-size: 18px;
     margin: 50px;
+ 
 }
+body {
+  background-image: url(https://www.mimenu.pe/wp-content/uploads/2020/09/66586156_2228903833894799_4195714634763730944_o.jpg);
+  align-items: center;
+  }
