@@ -108,7 +108,6 @@ function deleteAbc(cadena){
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
   cadenan=cadena.split('');
-  cade=[];
   for(i=0;i<cadenan.length;i++){
     if(cadenan[i]==='a'){
   delete cadenan[i];
@@ -129,6 +128,30 @@ function sortArray(arr) {
   //La función recibe una matriz de strings. Ordena la matriz en orden creciente de longitudes de cadena
   //Ej: Recibe ---> ["You", "are", "beautiful", "looking"] || Devuelve ---> [“You", "are", "looking", "beautiful"]
   //Escribe tu código aquí
+  var arrOrd=arr.slice(0,1);
+  var arrOrdIzq;
+  var arrOrdDer;
+
+  for(var i=1; i< arr.length ;i++)
+  {
+    for(var j=0; j< arrOrd.length ; j++)
+    {
+      if(arrOrd[j]. length>arr[i].length)
+      {
+        arrOrdIzq=arrOrd.slice(0,j);
+        arrOrdDer=arrOrd.slice(j);
+
+        arrord=arrOrdIzq.concat(arr[i]).concat(arrOrdDer);
+        break;
+      }
+
+      if(j === arrOrd.length-1){
+        arrOrd.push(arr[i]);
+        break;
+      }
+    }
+  }
+  return arrOrd;
 }
 
 
@@ -138,6 +161,16 @@ function buscoInterseccion(arreglo1, arreglo2){
   //Si no tienen elementos en común, retornar un arreglo vacío.
   //Aclaración: los arreglos no necesariamente tienen la misma longitud
   //Escribe tu código aquí  
+  var arrInter=[];
+  for(i=0; i<arreglo1.length;i++){
+    for(j=0;j<arreglo2.length;j++){
+      if(arreglo2[j]===arreglo1[i]){
+        arrInter.push(arreglo2[j]);
+        break;
+      }
+    }
+  }
+  return arrInter;
 }
 
 
