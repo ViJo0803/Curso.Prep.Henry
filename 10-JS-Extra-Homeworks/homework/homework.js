@@ -10,7 +10,17 @@ function deObjetoAmatriz(objeto){
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
+  var propiedades = Object.keys(objeto);
+  var contenido=Object.values(objeto);
+  var result=[];
+  for (i=0; i<propiedades.length;i++){
+var a=propiedades[i];
+var b=contenido[i];
+result.push([a,b])
+  }
+ return result;
 }
+
 
 
 function numberOfCharacters(string) {
@@ -18,6 +28,18 @@ function numberOfCharacters(string) {
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
+
+  var objetode={};
+  for (i=0;i<string.length;i++){
+    
+    if (!objetode[string[i]]){
+      objetode[string[i]]=1;
+  }
+  else { 
+    objetode[string[i]]=objetode[string[i]]+1;
+}
+  }
+  return objetode;
 }
 
 
@@ -26,6 +48,18 @@ function capToFront(s) {
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
+  var mayuscula='';
+  var minuscula=''
+  for(i=0;i<s.length;i++){
+    if(s[i].toUpperCase()===s[i]){
+        mayuscula=mayuscula+s[i];
+    
+    }
+    else{
+        minuscula=minuscula+s[i];
+    }
+  }
+  return mayuscula+minuscula;
 }
 
 
@@ -35,6 +69,20 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
+ var arrStr= str.split(" ");
+ var strMirror="";
+
+ for(i=0; i<arrStr.length;i++){
+   if(i===arrStr.length-1){
+     var temp= arrStr[i].split("").reverse().join("")
+      strMirror=strMirror+temp;
+    }
+    else{
+      var temp=arrStr[i].split("").reverse().join("");
+      strMirror=strMirror+temp+" ";
+    }
+ }
+ return strMirror;
 } 
 
 
@@ -43,6 +91,15 @@ function capicua(numero){
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de 
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
+  numero1=numero.toString();
+  numero2=numero1.split('').reverse();
+  numero3=numero2.join("");
+  if(numero3 === numero1){
+    return 'Es capicua';
+  }
+  else{
+    return'No es capicua'
+  }
 }
 
 
@@ -50,6 +107,21 @@ function deleteAbc(cadena){
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada 
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
+  cadenan=cadena.split('');
+  cade=[];
+  for(i=0;i<cadenan.length;i++){
+    if(cadenan[i]==='a'){
+  delete cadenan[i];
+  }
+    else if(cadenan[i]==='b'){
+    delete cadenan[i];
+
+  }
+  else if(cadenan[i]==='c'){
+    delete cadenan[i];
+  }
+}
+return cadenan.join('');
 }
 
 
