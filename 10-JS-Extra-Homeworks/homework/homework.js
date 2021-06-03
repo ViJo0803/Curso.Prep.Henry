@@ -152,7 +152,8 @@ function sortArray(arr) {
     }
   }
  return arrOrd;
- */ 
+ */
+/* 
 for(var i=0;i<arr.length;i++){
   for(var j=i+1;j<arr.length;j++){
     if(arr[i].length>arr[j].length){
@@ -162,6 +163,17 @@ for(var i=0;i<arr.length;i++){
     }
   }
 }
+return arr;
+*/
+arr.sort(function(a,b){
+  if(a.length>b.length){
+    return 1
+  }
+if(a.length<b.length){
+  return -1
+}
+return 0
+})
 return arr;
 }
 
